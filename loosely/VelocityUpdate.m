@@ -1,0 +1,9 @@
+function V=VelocityUpdate(oldfn,cpfn,cpv,fn,gn,g,Tt,V)
+        KK1= (oldfn-cpv*V+gn*g)*Tt;         %«ÿ”¿‘™P226
+        KK2= (cpfn-cpv*(V+0.5*KK1)+gn*g)*Tt;
+        KK3= (cpfn-cpv*(V+0.5*KK2)+gn*g)*Tt;
+        KK4= (fn-cpv*(V+KK3)+gn*g)*Tt;
+        V= V+(KK1+2*KK2+2*KK3+KK4)/6;   
+        ve=V(1); 
+        vn=V(2);
+        vu=V(3); 
